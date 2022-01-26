@@ -20,3 +20,6 @@ function closeMenu() {
     hamburger.classList.remove("active");
     navMenu.classList.remove("active");
 }
+
+// Change Nested Relationship of Nav-Items and Site Logo on Mobile View //
+

@@ -3,6 +3,7 @@
   margin: 0;
   font-size: 1.125rem;
   font-family: "poppins";
+  box-sizing: border-box;
 }
 
 /* Background */
@@ -35,7 +36,22 @@ ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   padding: 1rem 1.5rem;
+}
+
+.sitelogo {
+  background-color: rgba(0, 0, 0, 0.418);
+  border: solid 1px black;
+  padding: 0.5em;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: right;
+  padding: 1.25rem;
+  margin: 0;
+  width: 50%;
 }
 
 .hamburger {
@@ -55,38 +71,27 @@ ul {
 .nav-menu {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  flex-wrap: wrap;
 }
 
 .nav-item {
-  margin-left: 5rem;
+  margin-left: 1em;
 }
 
 .nav-link {
-  font-size: 1.6rem;
-  font-weight: 400;
-  color: #475569;
+  font-size: 1rem;
+  font-weight: 600;
+  border: solid 2px white;
+  padding: 0.5em;
+  color: #ffffff;
+  transition: 0.75s ease;
 }
 
 .nav-link:hover {
-  color: #482ff7;
+  background-color: rgba(112, 128, 144, 0.719);
 }
 
 /* Hero Section */
-
-.hero {
-  border: solid 1px magenta;
-  display: flex;
-  background-color: black;
-}
-
-.col1 {
-  border: solid 1px rgb(0, 225, 255);
-  margin: 0 auto;
-  width: 50%;
-  display: flex;
-  justify-content: center;
-}
 
 /* Media Queries */
 
@@ -104,7 +109,7 @@ ul {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 970px) {
   #myVideo {
     display: none;
   }
@@ -118,13 +123,42 @@ ul {
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1249px) and (min-width: 769px) {
+  .nav-container {
+    display: flex;
+    justify-content: right;
+    padding: 1.25rem;
+    margin: 0;
+    width: 60%;
+  }
+}
+
+@media only screen and (max-width: 1045px) and (min-width: 769px) {
+  .nav-container {
+    display: flex;
+    justify-content: right;
+    padding: 1.25rem;
+    margin: 0;
+    width: 65%;
+  }
+}
+
+@media only screen and (max-width: 970px) {
+  .navbar {
+    flex-wrap: nowrap;
+  }
+
+  header {
+    background-color: black;
+    padding-bottom: 1em;
+  }
+
   .nav-menu {
     position: fixed;
     left: -100%;
-    top: 5rem;
+    top: 5em;
     flex-direction: column;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.445);
     width: 100%;
     border-radius: 10px;
     text-align: center;
@@ -137,12 +171,26 @@ ul {
   }
 
   .nav-item {
-    margin: 2.5rem 0;
+    margin: 1em 0;
+  }
+
+  .nav-link {
+    color: black;
   }
 
   .hamburger {
     display: block;
     cursor: pointer;
+    position: fixed;
+    right: 1em;
+    top: 1.5em;
+    border: solid 1px black;
+    padding: 0.15em 0.35em;
+    transition: 0.5s ease;
+  }
+
+  .hamburger:hover {
+    background-color: rgba(211, 211, 211, 0.521);
   }
 
   .hamburger.active .bar:nth-child(2) {
@@ -155,5 +203,84 @@ ul {
 
   .hamburger.active .bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
+  }
+}
+
+@media only screen and (max-width: 970px) and (min-width: 425px) {
+  header {
+    background-color: black;
+    padding-bottom: 1em;
+  }
+
+  .hamburger {
+    position: fixed;
+    top: 1em;
+    border: solid 2.25px white;
+    transition: 0.5s ease;
+    background-color: rgba(255, 255, 255, 0.603);
+  }
+
+  .hamburger:hover {
+    background-color: rgba(255, 255, 255, 0.829);
+  }
+
+  .sitelogo h1 {
+    position: fixed;
+    top: 0;
+    left: 0.5em;
+  }
+}
+
+@media only screen and (max-width: 424px) {
+  header {
+    background-color: black;
+  }
+
+  .hamburger {
+    position: fixed;
+    top: 1em;
+    border: solid 2.25px white;
+    transition: 0.5s ease;
+    background-color: rgba(255, 255, 255, 0.603);
+  }
+
+  .hamburger:hover {
+    background-color: rgba(255, 255, 255, 0.829);
+  }
+
+  .sitelogo h1 {
+    font-size: 1.5em;
+    position: fixed;
+    top: 0;
+    left: 0.5em;
+  }
+}
+
+@media only screen and (max-width: 424px) {
+  header {
+    background-color: black;
+  }
+
+  .hamburger {
+    position: fixed;
+    top: 1em;
+    border: solid 2.25px white;
+    transition: 0.5s ease;
+  }
+
+  .hamburger:hover {
+    background-color: rgba(211, 211, 211, 0.829);
+  }
+
+  .sitelogo h1 {
+    font-size: 1.5rem;
+    position: fixed;
+    top: 0;
+    left: 0.5em;
+  }
+}
+@media only screen and (max-width: 360px) {
+  .sitelogo h1 {
+    font-size: 1.23rem;
   }
 }
